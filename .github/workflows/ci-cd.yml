@@ -38,6 +38,16 @@ jobs:
         run: |
           safety check --ignore 70612
 
+      - name: Create GCP credentials file from Base64
+        run: |
+            echo "Creating GCP credentials file from Base64..."
+            echo "${{ secrets.GCP_CREDENTIALS }}" | base64 --decode > /tmp/gcp-key.json
+     
+      - name: Configure Terraform
+        run: |
+            cp /tmp/gcp-key.json ${{ github.workspace }}/gcp-key.json
+
+
       - name: Terraform Init
         run: |
           terraform init

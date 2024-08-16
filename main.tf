@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("/Users/adirremi/my-terraform-project/gcp-key.json")
+  credentials = file("${path.module}/gcp-key.json")
   project = var.project_id
   region  = var.region
 }
