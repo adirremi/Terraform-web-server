@@ -2,3 +2,4 @@ pytest
 requests
 bandit
 safety
+jinja2>=3.1.5
