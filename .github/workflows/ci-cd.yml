@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Bandit Security Scan
         run: |
-          bandit -r your_code_directory
+          bandit -r src
 
       - name: Run Safety Security Scan
         run: |
